@@ -2,27 +2,39 @@
 //Every time a user runs a program,
 //they should get a new, randomized output.
 
-
-    const messages = [];
-    const structureArr = [`Hello ${subjectArr}`, `Today's message is brought to you by ${subjectArr}`, `${subjectArr} is going to have a great day`];
-    const subjectArr = [`the world`, `raid shadow legends`, `James may`];
-
 class MixedMessages {
     constructor (){
-        _structure = [];
-        _subject = [];
-        _constructedMessage = [];
-        
+        this._eatingAtHomeOrEatingOut = ['Eating out', 'Eating at home'];
+        this._eatingOutOptions = [];
+        this._eatingAtHomeOptions = [];
+        this._subject = '';
+    }
+
+    eatingOut(){
+        const restaurants = new Map();
+
+        restaurants.set('panda express', 'Orange chicken, black pepper chicken, or bejing beef');
+        restaurants.set('mexican', 'burritos, tacos, or carne asada fries');
+        restaurants.set('chic-fil-a', 'spicy chicken sandwich');
+    }
+
+    eatingAtHome(){
+        const homeFood = new Map();
+        homeFood.set('')        
+    }
+
+    whatsForDinner(){
+
+        this._subject = this._subjectArr[Math.floor(Math.random() * this._subjectArr.length)];
+        this._constructedMessage.push(this._structureArr[Math.floor(Math.random() * this._structureArr.length)]);
+        console.log(this._subject);
+        console.log(this._constructedMessage.join(''));
     }
 
 
-    generateMessage(){
-        
-    }
-
-
-    print(){
-        console.log(generateMessage());
-    }
 
 }
+
+const NewMessage  = new MixedMessages;
+NewMessage.whatsForDinner(); 
+
